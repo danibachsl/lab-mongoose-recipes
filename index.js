@@ -18,12 +18,12 @@ mongoose
   .then(() => {
     console.log("Base de datos limpia!");
 
-    return Recipe.insertMany(data);
+    //return Recipe.insertMany(data);
   })
   .then((data) => {
-    for (let i of data) {
-      console.log(`Recipe title: ${i.title}`);
-    }
+    // for (let i of data) {
+    //   console.log(`Recipe title: ${i.title}`);
+    // }
   })
   .catch(error => {
     console.error('Error connecting to the database', error);
