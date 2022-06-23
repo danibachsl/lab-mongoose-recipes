@@ -33,6 +33,19 @@ mongoose
   .then((data) => {
     console.log("Recipes insertadas");
 
+    return Recipe.findOneAndUpdate(
+      { name: "Rigatoni alla Genovese" },
+      { duration: 100 },
+      { new: true } // Receta actualizada
+    );
+  })
+  .then((data) => {
+    console.log("Recipe duration update has been successful!");
+
+    return Recipe.deleteOne({ name: "Carrot Cake" });
+  })
+  .then((data) => {
+    console.log("Carrot Cake recipe deleted successfully!");
   })
   .catch(error => {
     console.error('Error connecting to the database', error);
