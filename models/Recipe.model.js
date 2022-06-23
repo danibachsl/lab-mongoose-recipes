@@ -38,7 +38,7 @@ const recipeSchema = new Schema({
   },
 
   creator: {
-    type: this.toString,
+    type: String
   },
 
   created: {
