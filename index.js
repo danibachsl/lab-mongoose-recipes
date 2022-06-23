@@ -17,13 +17,22 @@ mongoose
   })
   .then(() => {
     console.log("Base de datos limpia!");
+    Recipe.create({
+      title: "Paella de la buena",
+      level: "UltraPro Chef",
+      ingredients: ["a", "b", "c", "d", "e", "f", "g"],
+      cuisine: "Spanish",
+      dishType: "main_course",
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Paella_valenciana_01.jpg/2560px-Paella_valenciana_01.jpg",
+      duration: 120,
+      creator: "Chef Ramsay"
+    })
 
-    //return Recipe.insertMany(data);
+    return Recipe.insertMany(data);
   })
   .then((data) => {
-    // for (let i of data) {
-    //   console.log(`Recipe title: ${i.title}`);
-    // }
+    console.log("Recipes insertadas");
+
   })
   .catch(error => {
     console.error('Error connecting to the database', error);
